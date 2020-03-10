@@ -1,0 +1,17 @@
+fun main(args: Array<String>) {
+    val point1 = OpOverloadingDemo(5, -7)
+    val point2 = OpOverloadingDemo(6, 8)
+
+    var sum = OpOverloadingDemo()
+    sum = point1 + point2
+
+    println("W3Adda : The Sum is = (${sum.x}, ${sum.y})")
+}
+
+class OpOverloadingDemo(val x: Int = 0, val y: Int = 10) {
+
+    // overloading plus function
+    operator fun plus(p: OpOverloadingDemo) : OpOverloadingDemo {
+        return OpOverloadingDemo(x + p.x, y + p.y)
+    }
+}
